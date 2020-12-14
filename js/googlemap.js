@@ -172,7 +172,7 @@ function initMap() {
 
 function showDrivers(lat, lon) {
     console.log("showDrivers" + lat);
-    alert(lat);
+    //alert(lat);
     var image = {
         url: 'img/ayeauto_marker.png', // image is 512 x 512
         //scaledSize : new google.maps.Size(22, 32)
@@ -219,13 +219,13 @@ $.ajaxSetup({
 	});
 $.getJSON("http://approxy.ddns.net/ws?type=driver&latitude=11.2958647&longitude=75.7828067&rad=1", function(data) {
   //alert("success");
-  alert(JSON.stringify(data));
+  //alert(JSON.stringify(data));
   data.forEach(markerFunction);
-  $(".mypanel").html(JSON.stringify(data));
+  //$(".mypanel").html(JSON.stringify(data));
 })
-.done(function() { alert('getJSON request succeeded!'); })
+.done(function() { /*alert('getJSON request succeeded!');*/ })
 .fail(function(jqXHR, textStatus, errorThrown) { alert(textStatus+'<<< getJSON request failed! >>'+errorThrown); })
-.always(function() { alert('getJSON request ended!'); });
+.always(function() { /*alert('getJSON request ended!');*/ });
 
 }
 
@@ -250,7 +250,7 @@ function markerFunction(auto) {
     //debug_mobile = debug_mobile + auto.lat + "<br>";
     
     var coor = auto.location.coordinates; // coor[0] = lon , coor[1]=lattitude
-    alert(coor[0]);
+    //alert(coor[0]);
     var latLng = new google
                 .maps
                 .LatLng(coor[1], coor[0]);
