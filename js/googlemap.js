@@ -224,7 +224,7 @@ $.getJSON('http://approxy.ddns.net/ws?type=driver&latitude='+lat+'&longitude='+l
   //$(".mypanel").html(JSON.stringify(data));
 })
 .done(function() { /*alert('getJSON request succeeded!');*/ })
-.fail(function(jqXHR, textStatus, errorThrown) { alert(textStatus+'<<< getJSON request failed! >>'+errorThrown); })
+.fail(function(jqXHR, textStatus, errorThrown) { alert(textStatus+'<<< Server issue(s) >>'+errorThrown); })
 .always(function() { /*alert('getJSON request ended!');*/ });
 
 }
