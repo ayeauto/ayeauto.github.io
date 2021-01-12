@@ -256,11 +256,41 @@ function markerFunction(auto) {
                 .LatLng(coor[1], coor[0]);
     var marker = new google
                 .maps
-                .Marker({position: latLng, map: map, icon: image, title: "auto.number_plate"});
+                .Marker({position: latLng, map: map, icon: image, title: ""});
+
+    // Setting Marker Info Window
+    var tStr = "";
+    var d = new Date();
+    var n = d.getTime();
+	var tAgo = 0;
+
+                    tAgo = (n - auto.loc_time) / 1000;//secs
+                    if (tAgo < 60)
+                        tStr = "just now";
+                    else {
+                        tAgo = tAgo / 60;//mins
+                        if (tAgo < 60)
+                            tStr = Math.floor(tAgo) + "- mins ago";
+                        else tStr = "--:--";
+                    }
+    const contentString =
+    '<div id="content">' +
+    '<div id="siteNotice">' +
+    "</div>" +
+    '<h1 id="firstHeading" class="firstHeading">H.</h1>' +
+    '<div id="bodyContent">' +
+    "<p>HelloAuto, Connects you to Drivers Nearby" +
+    "<br>"+"Reg. "+auto.number_plate +
+    "<br>"+"Last seen   "+tStr+
+    "<br>"+"Phone    "+'<a href="tel:'+auto.phone+'">'+auto.phone+'</a>' +
+    "</p>" +
+    "</div>" +
+    "</div>";
+
 
     var infowindow = new google
                 .maps
-                .InfoWindow({content: auto.app});
+                .InfoWindow({content: contentString/*tStr+"\n"+"Phone-"+auto.phone*/});
 
      marker.addListener('click', function () {
                 infowindow.open(map, marker);
