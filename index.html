@@ -81,10 +81,10 @@ var debug_mobile = "desktop";
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#features">Features</a>
+                        <a class="page-scroll" href="#livemap">Live Map</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#livemap">Live Map</a>
+                        <a class="page-scroll" href="#features">Features</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#apps">Get App</a>
@@ -108,9 +108,19 @@ var debug_mobile = "desktop";
             </div>
         </div>
     </header>
+    <section id="livemap">
+        <div id="map" style="margin: 0;padding: 0;">
+        <!--input id="pac-input" class="form-control" type="text" placeholder="Enter a location"!-->
+        <script src="js/googlemap.js">
+        </script>
+	<p id="Test"></p>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLNoBO5W0qLQhp-tZlQxFdn0i8tLvETDk&libraries=places&callback=initMap">
+        </script>
+	</div>
+    </section>
     <section id="features" class="center-content">
         <div class="container">
-            <h3 class="section-heading text-center">Features</h3>
+            <h3 class="section-heading text-center">Features (Soon...)</h3>
             <br>
             <div class="row text-center">
                 <div class="col-xs-4 col-sm-4 col-md-2">
@@ -193,15 +203,6 @@ var debug_mobile = "desktop";
             </div>
         </div>
     </section>
-    <section id="livemap">
-        <div id="map" style="margin: 0;padding: 0;"></div>
-        <input id="pac-input" class="form-control" type="text" placeholder="Enter a location">
-        <script src="js/googlemap.js">
-        </script>
-	<p id="Test"></p>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLNoBO5W0qLQhp-tZlQxFdn0i8tLvETDk&libraries=places&callback=initMap">
-        </script>
-    </section>
     <section id="apps" class="bg-light-gray center-content">
         <div class="container">
             <div class="row">
@@ -246,7 +247,9 @@ var debug_mobile = "desktop";
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Enter your contact info and your message.</h3>
+                    <h3 class="section-subheading text-muted">Enter your contact info and your message. or..
+		    <a href="tel:8921067062">Call us at +91-8921067062</a>
+		    </h3>
                 </div>
             </div>
             <div class="row">
