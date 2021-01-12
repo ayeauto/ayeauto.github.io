@@ -275,11 +275,11 @@ function markerFunction(auto) {
                     }
     const contentString =
     '<div id="content">' +
-    '<div id="bodyContent">' +
     "<p>" +'<b>H.</b>'+
     "<br>"+"Reg. "+auto.number_plate +
-    "<br>"+"Last seen   "+tStr+
-    "<br>"+"Phone    "+'<a href="tel:'+auto.phone+'">'+auto.phone+'</a>' +
+    "<br>"+"Last Seen -"+tStr+
+    "<br>"+"Accuracy  -"+auto.acu+
+    "<br>"+"Phone     -"+'<a href="tel:'+auto.phone+'">'+auto.phone+'</a>' +
     "</p>" +
     "</div>";
 
