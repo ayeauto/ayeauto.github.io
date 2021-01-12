@@ -279,7 +279,7 @@ function markerFunction(auto) {
     "</div>" +
     '<h1 id="firstHeading" class="firstHeading">H.</h1>' +
     '<div id="bodyContent">' +
-    "<p>HelloAuto, Connects you to Drivers Nearby" +
+    "<p>" +
     "<br>"+"Reg. "+auto.number_plate +
     "<br>"+"Last seen   "+tStr+
     "<br>"+"Phone    "+'<a href="tel:'+auto.phone+'">'+auto.phone+'</a>' +
