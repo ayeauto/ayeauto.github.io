@@ -278,7 +278,7 @@ function markerFunction(auto) {
     "<p>" +'<b>H.</b>'+
     "<br>"+"Reg. "+auto.number_plate +
     "<br>"+"Last Seen -"+tStr+
-    "<br>"+"Accuracy  -"+auto.acu+
+    "<br>"+"Accuracy  -"+Math.floor(auto.acu)+
     "<br>"+"Phone     -"+'<a href="tel:'+auto.phone+'">'+auto.phone+'</a>' +
     "</p>" +
     "</div>";
