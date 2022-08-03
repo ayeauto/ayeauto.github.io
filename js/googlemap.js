@@ -217,7 +217,7 @@ function showDrivers(lat, lon) {
 $.ajaxSetup({
 		crossOrigin: true
 	});
-$.getJSON('http://approxy.ddns.net/ws?type=driver&latitude='+lat+'&longitude='+lon+'&rad=1000', function(data) {
+$.getJSON('http://approxy.ddns.net/ws?type=all&latitude='+lat+'&longitude='+lon+'&rad=1000', function(data) {
   //alert("success");
   //alert(JSON.stringify(data));
   data.forEach(markerFunction);
@@ -243,8 +243,22 @@ var image = {
 }
 
 function markerFunction(auto) {
+//     console.log("Response: "+JSON.stringify(auto,null,'\t'));
+
+    let icon = "";
+    
+    switch(auto.userType){
+    	case 'auto': icon = 'img/marker_30x30_autorickshaw.png';break;
+    	case 'bus': icon = 'img/marker_bus.png'; break;
+    	case 'private': icon = 'img/marker_30x30_car.png';break;
+    	case 'cab': icon = 'img/marker_taxi_30.png';break;
+    	case 'driver': icon = 'img/ayeauto_marker.png';break;
+    	default: icon = 'img/marker_warning_30.png';
+    	
+    }
+    
     var image = {
-        url: 'img/ayeauto_marker.png', // image is 512 x 512
+        url: icon,//'img/marker_30x30_car.png', // image is 512 x 512
         //scaledSize : new google.maps.Size(22, 32)
     };
     //debug_mobile = debug_mobile + auto.lat + "<br>";
