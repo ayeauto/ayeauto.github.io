@@ -272,6 +272,19 @@ function markerFunction(auto) {
                 .maps
                 .Marker({position: latLng, map: map, icon: image, title: ""});
 
+    // Tweak for debugging 
+    var timestamp = auto.loc_time;
+var date = new Date(timestamp );
+
+var year = date.getFullYear();
+var month = date.getMonth() + 1;
+var day = date.getDate();
+var hours = date.getHours();
+var minutes = date.getMinutes();
+var seconds = date.getSeconds();
+
+var last_updated_time = year + "-" + month + "-" + day + " " + hours + ":" + minutes + ":" + seconds;
+
     // Setting Marker Info Window
     var tStr = "";
     var d = new Date();
@@ -291,7 +304,8 @@ function markerFunction(auto) {
     '<div id="content">' +
     "<p>" +'<b>H.</b>'+
     "<br>"+"Reg. "+auto.number_plate +
-    "<br>"+"Last Seen -"+tStr+
+    //"<br>"+"Last Seen -"+tStr+
+    "<br>"+"Last Seen -"+last_updated_time+
     "<br>"+"Accuracy  -"+Math.floor(auto.acu)+
     "<br>"+"Phone     -"+'<a href="tel:'+auto.phone+'">'+auto.phone+'</a>' +
     "</p>" +
